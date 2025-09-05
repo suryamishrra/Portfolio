@@ -24,13 +24,13 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-gradient-to-r from-blue-600 to-purple-600 backdrop-blur-md shadow-lg' : 'bg-gradient-to-r from-blue-600/90 to-purple-600/90 backdrop-blur-md shadow-md'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold text-gray-800"
+            className="text-2xl font-bold text-white"
           >
             SPM
           </motion.div>
@@ -40,7 +40,7 @@ export const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+                className="text-white/90 hover:text-white hover:bg-white/10 px-3 py-2 rounded-lg transition-all duration-200 font-medium"
               >
                 {item.name}
               </a>
@@ -50,7 +50,7 @@ export const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-700"
+              className="text-white hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -64,14 +64,14 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t"
+            className="md:hidden bg-gradient-to-r from-blue-600 to-purple-600 border-t border-white/20"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                  className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-md font-medium transition-all duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
